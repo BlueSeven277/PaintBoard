@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>RxPainter</title>
+	<link rel="stylesheet" href="./css/style.css" />
+	<link rel="stylesheet" href="./bsf/css/bootstrap.css" />
+</head>
+<body>
+	<!-- 全屏画布 -->
+	<canvas id="canvas"></canvas>
+	<!-- 功能菜单 -->
+	<ul id="menu">
+		<li>
+			<span class="glyphicon glyphicon-pencil"> </span>
+		</li>
+		<li>
+			<span class="glyphicon glyphicon-italic"></span>
+		</li>
+		<li>
+			<span></span>
+		</li>
+		<li>
+			<span></span>
+		</li>
+		<li>
+			<span>ellipse</span>
+		</li>
+		<li>
+			<span class="glyphicon glyphicon-stop"></span>
+		</li>
+		<li>
+			<span class="glyphicon glyphicon-star-empty"></span>
+		</li>
+		<li>
+			<span class="glyphicon glyphicon-hand-up"></span>
+		</li>
+		<li>
+			<span class="glyphicon glyphicon-tasks"></span>
+		</li>
+		<li>
+			<span class="glyphicon glyphicon-tint"></span>
+		</li>
+		<li>
+			<span class="glyphicon glyphicon-erase"></span>
+		</li>
+		<li>
+			<span class="glyphicon glyphicon-repeat"></span>
+		</li>
+		<li>
+			<span class="glyphicon glyphicon-download"></span>
+		</li>
+
+	</ul>
+	<ul id="menu2">
+		<li>
+			<span class="glyphicon glyphicon-pencil"> </span>
+		</li>
+		<li>
+			<span class="glyphicon glyphicon-italic"></span>
+		</li>
+	</ul>
+	<!-- 颜色画笔选择侧边栏 -->
+	<div id="sidebar">
+		<div class="sidebar-draw">
+			<h2>Pen Size</h2>
+			<ul>
+				<li>
+					<span></span>
+				</li>
+				<li>
+					<span></span>
+				</li>
+				<li>
+					<span></span>
+				</li>
+				<li>
+					<span></span>
+				</li>
+				<li>
+					<span></span>
+				</li>
+				<li>
+					<span></span>
+				</li>			
+			</ul>
+		</div>
+		<div class="sidebar-color">
+			<h2>Color</h2>
+			<ul>
+				<li></li>
+				<li></li>				
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+	</div>
+	<!-- 开屏动画 -->
+	<div id="firstScreen" class="first-screen">
+		<span>
+			<img src="./img/welcome.gif" />
+		</span>
+	</div>
+	<!-- 弹窗提示框 -->
+	<div id="tip" class="tip">
+		<div class="tip-main">
+			<span></span>
+			<span class="text">你选择了红色！</span>
+		</div>
+	</div>
+	<!-- 鼠标右键菜单 -->
+	<div id="contextmenu" class="contextmenu">
+		<ul>
+			<li style="color: black">RxPainter</li>
+			<li>Full Screen Mode</li>
+			<li>Copy</li>
+			<li>Cut</li>
+			<li>Paste</li>
+			<li ><a href="" download="canvas.png" style="color:#ffffff" id="save_href"  >
+				<img src="" id="save_img" />Save/Download</a></li>
+		</ul>
+	</div>
+	<script src="main.js"></script>
+	<script>
+		//2s后隐藏开屏界面，初始化画板
+		!function(){
+
+			var firstScreen = document.getElementById('firstScreen');
+			setTimeout(function(){
+
+				firstScreen.style.display = 'none';
+				drawBoard.init();
+			},3500);
+		}();
+	</script>
+</body>
+</html>
